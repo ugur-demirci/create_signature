@@ -16,12 +16,12 @@
         .language-buttons button {width: auto; padding: 10px 20px; margin: 0 10px;}
         .success {color: green; font-weight: bold; text-align: center;} 
         .placeholder {color: #aaa;} 
-	p#adresDetails, p#subeDetails {margin: 10px 0; font-size: 14px; color: #555;}
-	.country-code-select {width: 40%; padding: 5px; font-size: 14px; display: inline-block;}
-	.tooltip-container {position: relative; display: inline-block;}
-	.tooltip-text {visibility: hidden; width: 250px; background-color: #555; color: #fff; text-align: center; border-radius: 6px; padding: 5px 10px; position: absolute; z-index: 1; bottom: 120%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s;}
-	.tooltip-container:hover .tooltip-text {visibility: visible; opacity: 1;}
-	.link-container {text-align: center; margin-top: 20px;}
+		p#adresDetails, p#subeDetails {margin: 10px 0; font-size: 14px; color: #555;}
+		.country-code-select {width: 40%; padding: 5px; font-size: 14px; display: inline-block;}
+		.tooltip-container {position: relative; display: inline-block;}
+		.tooltip-text {visibility: hidden; width: 250px; background-color: #555; color: #fff; text-align: center; border-radius: 6px; padding: 5px 10px; position: absolute; z-index: 1; bottom: 120%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s;}
+		.tooltip-container:hover .tooltip-text {visibility: visible; opacity: 1;}
+		.link-container {text-align: center; margin-top: 20px;}
         .link-container a {color: #007BFF; text-decoration: none; font-size: 14px;}
         .link-container a:hover {text-decoration: underline;}
     </style>
@@ -35,9 +35,9 @@
     <h1 id="formTitle">Mail İmza Oluşturucu</h1>
     <form id="signatureForm">
         <label for="name" id="labelName">Ad Soyad:</label>
-        <input type="text" id="name" name="name" placeholder="ex: Your NAME" aria-label="Ad Soyad" autocomplete="name" required>
+        <input type="text" id="name" name="name" placeholder="ex: Name SURNAME" aria-label="Ad Soyad" autocomplete="name" required>
 
-	<label for="title" id="labelTitle">Unvan:</label>
+		<label for="title" id="labelTitle">Unvan:</label>
 <select id="title" name="title" aria-label="Unvan" required>
     <option value="" disabled selected id="selectTitleOption">Unvan Seçin</option>
     <option value="agronomist" data-tr="Agronom" data-en="Agronomist" data-uk="Агроном">Agronom</option>
@@ -234,29 +234,93 @@
 		    "arabistan": {
                 "details": "King Salman Abdul Aziz Road, Sumou Tower, 2nd Floor No.205 Al Khobar, Kingdom of Saudi Arabia",
                 "subeList": {
-                    "SA - AlKhobar": { "address": "King Salman Abdul Aziz Road, Sumou Tower, 2nd Floor No.205 Al Khobar, Kingdom of Saudi Arabia ", "map": "https://maps.app.goo.gl/QQ9Tqcz7bx72zCDv9" },
+                    "SA - AL KHOBAR - AL KHOBAR - Al Khobar Ofis": { "address": "King Salman Abdul Aziz Road, Sumou Tower, 2nd Floor No.205 Al Khobar, Kingdom of Saudi Arabia", "map": "https://maps.app.goo.gl/QQ9Tqcz7bx72zCDv9" },
+					"SA - RIYAD - QIDDIYA - Riyad Yikim Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/ehaThRhURtu68GTYA" },
+					"SA - TEBÜK - TROJENA - Trojena D13 Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/eNr6BhJ8qSiwnjDp6" }
+
 			    }
 			},
 			"moldova": {
                 "details": "MD-3401, str. Chișinăului 27/A, mun. Hîncești, Republica Moldova",
                 "subeList": {
-                    "hincesti": { "address": "MD-3401, str. Chișinăului 27/A, mun. Hîncești, Republica Moldova", "map": "https://maps.app.goo.gl/aWJdWMa5Y47kNDi6A" },
-					"chisinau": { "address": "Dimitrie Cantemir Boulevard. 5/4, MD-2001, Chișinău, Office 301, Republica Moldova", "map": "https://maps.app.goo.gl/aWJdWMa5Y47kNDi6A" },
-                    "soroca": { "address": "Str. Cosautului Nr. 57, Soroca, Republica Moldova", "map": "https://goo.gl/maps/exampleIstanbul" }
+                    "MD - HINÇEŞTİ - HINÇEŞTİ - Hincesti Şantiye": { "address": "MD-3401, str. Chișinăului 27/A, mun. Hîncești, Republica Moldova", "map": "https://maps.app.goo.gl/bomNMJA8XWkJk42L9" },
+					"MD - KİŞİNEV - KİŞİNEV - Kişinev Ofis": { "address": "Dimitrie Cantemir Boulevard. 5/4, MD-2001, Chișinău, Office 301, Republica Moldova", "map": "https://maps.app.goo.gl/aWJdWMa5Y47kNDi6A" },
+					"MD - SOROCA - SOROCA - Soroca Şantiye": { "address": "Str. Cosautului Nr. 57, Soroca, Republica Moldova", "map": "https://maps.app.goo.gl/WGP1W8w1KqqeFZHC7" }
+
                 }
             },
             "turkiye": {
                 "details": "Mustafa Kemal Mah. 2118Cad. B Blok 4B/118 06510, Ankara",
                 "subeList": {
-                    "ankara": { "address": "Mustafa Kemal Mah. 2118Cad. B Blok 4B/118 06510, Ankara", "map": "https://goo.gl/maps/p7s3as3iQKR2" },
-                    "istanbul": { "address": "Merdivenköy Mahallesi Bora Sokak No:1 Kat: 9 Nida Kule İş Merkezi 34730 Göztepe İstanbul", "map": "https://maps.app.goo.gl/n5itHMMzsWwBPc93A" }
+					"TR - AMASYA - MERZİFON - Merzifon Şantiye": { "address": "Bademli Köyü Badal Mevkii No:182/A Gümüşhacıköy/AMASYA", "map": "https://maps.app.goo.gl/KfCo2QMjhiwB8NbXA" },
+					"TR - ANKARA - ÇAMLIDERE - Sarikavak Şantiye": { "address": "Sarıkavak Mah. Yukarı Sok.  No: 88 Çamlıdere/ANKARA", "map": "https://maps.app.goo.gl/jxgigqR1p4uqL9VR7" },
+					"TR - ANKARA - ÇANKAYA - Maidan Ofis": { "address": "Mustafa Kemal Mahallesi 2118 Cadde B Blok No: 4B/118 06510 Çankaya/ANKARA", "map": "https://maps.app.goo.gl/svyK7ZWCjKRfieEe6" },
+					"TR - ANKARA - ÇANKAYA - Viatwins Ofis": { "address": "Söğütözü Mahallesi 2177. Cadde Via Twins İş Merkezi No: 10/B – 159:160 06510 Çankaya/ANKARA", "map": "https://maps.app.goo.gl/hsbbgUMzx2DtMR2Q7" },
+					"TR - ANKARA - ÇANKAYA - Yakupabdal Şantiye": { "address": "Yakupabdal Küme Evleri Yakupabdal Mah. 1518 B Çankaya/ANKARA", "map": "https://maps.app.goo.gl/Q6yDc7dp6wFiGX9z5" },
+					"TR - ANKARA - ETİMESGUT - Yapracik Şantiye": { "address": "Yapracık Mah. Yapracık Küme evleri, No:137-146 Etimesgut/ANKARA", "map": "https://maps.app.goo.gl/wmsy56qpYX8LBPGW7" },
+					"TR - ANKARA - GÖLBAŞI - Gölbaşı Merkez Kamp": { "address": "Ankara Çevre Otoyolu İncek Mevkii 5. Km Gölbaşı/ANKARA", "map": "https://maps.app.goo.gl/8umWNh2gzxHSc7ad6" },
+					"TR - ANKARA - KAHRAMANKAZAN - Karalar Şantiye": { "address": "Söğütözü Mah. 2177 Cd. No:10-B-160 Çankaya/ANKARA", "map": "https://maps.app.goo.gl/hjEGJH3JYdxRswPR6" },
+					"TR - ANKARA - MAMAK - Çalinseki Şantiye": { "address": "Çalınseki Küme Evleri Kıbrıs Mah. No:6 Mamak/ANKARA", "map": "https://maps.app.goo.gl/fzZHuEr7o5bLETNC6" },
+					"TR - ANKARA - POLATLI - Babayakup Şantiye": { "address": "Babayakup mahallesi babayakup sokak No:85 Polatlı/ANKARA", "map": "https://maps.app.goo.gl/eLqcF45LjFHvVAJE9" },
+					"TR - ANKARA - SİNCAN - Hisarlikaya Şantiye": { "address": "Hisarlıkaya Küme Evleri Hisarlıkaya Mah.No: 252 Sincan/ANKARA", "map": "https://maps.app.goo.gl/zqbP6jCLUBctB4VXA" },
+					"TR - ANKARA - SİNCAN - Maliköy Şantiye": { "address": "Malıköy Kümeevleri Malıköy Mah.  No:517 Sincan/ANKARA", "map": "https://maps.app.goo.gl/ZpTzZktZCMJzjKT37" },
+					"TR - BOLU - MERKEZ - Çaydurt Şantiye": { "address": "Çatakören Köyü No: 97 Merkez/BOLU", "map": "https://maps.app.goo.gl/BsaGrJkeV4zJ18wj7" },
+					"TR - BOLU - MUDURNU - Mudurnu Şantiye": { "address": "Çatakören Köyü  No:97 Merkez/ BOLU", "map": "https://maps.app.goo.gl/7yxarcct8bHA8XDQ8" },
+					"TR - ÇORUM - OSMANCIK - Osmancik Şantiye": { "address": "Bademli Köyü Badal Mevkii No:182/A Gümüşhacıköy/AMASYA", "map": "https://maps.app.goo.gl/ad6ACcT8kXhW1CME9" },
+					"TR - ESKİŞEHİR - SİVRİHİSAR - Oğlakçi Şantiye Şantiye": { "address": "Demirci Köyü Mah. Demirci Sok No:177 Sivrihisar/ESKİŞEHİR", "map": "https://maps.app.goo.gl/U8tMbPHpZ4kueEXX9" },
+					"TR - İSTANBUL - GÖZTEPE - Nida Kule Ofis": { "address": "Merdivenköy Mahallesi Bora Sokak No:1 Kat: 9 Nida Kule İş Merkezi 34730 Göztepe/İSTANBUL", "map": "https://maps.app.goo.gl/1wGugUAYphgPFX5m6" },
+					"TR - OSMANİYE - DÜZİÇİ - Düziçi Şantiye": { "address": "Yazlamazlı Köyü Ayşeler Mevkii Onur Grup Şantiyesi Ada 258 Parsel: 6/7 Düziçi/OSMANİYE", "map": "https://maps.app.goo.gl/F4tKjGSCgyV6yBE4A" },
+					"TR - SİVAS - ULAŞ - Ulaş Şantiye": { "address": "Kayapınar Köyü Esentepe Mevkii No:175 Ulaş/SİVAS", "map": "https://maps.app.goo.gl/dv2JYdSN2BPkLX5G8" }
+
                 }
             },
             "ukrayna": {
-                "details": "Volodymyrska Street 50, Kyiv, Ukraine",
+                "details": "Fatura adresi/adresleri eksik",
                 "subeList": {
-                    "kyiv": { "address": "Shevchenkivskyi District, Kyiv", "map": "https://goo.gl/maps/exampleKyiv" },
-                    "lviv": { "address": "Prospect Svobody, Lviv", "map": "https://goo.gl/maps/exampleLviv" }
+							"UA - DINIPRO - NIKOPOL - Nikopol Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/kYd5vXe5U4CMCN3x7" },
+							"UA - DONESK - MANHUSH - Manhush Mekanik Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/imnYixuKvFYRf8ag7" },
+							"UA - KHMELNITKSY  -  - Gunes Enerjisi Ofis": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/VUkAZt3jkT8GFFJ29" },
+							"UA - KHMELNITKSY  - LETYCHIV - Şantiye Asfalt Ve Mekanik Plent": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/A4NDt9Neg66hhcxa9" },
+							"UA - KIEV - BILA TSERKVA - Kiev-Odessa Asfalt Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/3qszqSZVYHQCAZuJ9" },
+							"UA - KIEV - BILA TSERKVA - Kiev-Odessa Mekanik Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/eggemtbL8TfRV1PP6" },
+							"UA - KIEV - BILA TSERKVA - Kiev-Odessa Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/ALmyDSKtGo7Zvz3u6" },
+							"UA - KIEV - OBUKHIV  - Obukhiv Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/eqCyJsEGyRh95FgT7" },
+							"UA - KIEV - OBUKHIV  - Obukhiv Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/SNhyJbp9w6LrG5LY7" },
+							"UA - KIEV - VISHNEVE - Vishneve Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/4Tmbv4gVyVAkUSJ79" },
+							"UA - KRYVI RIH -  - H23 Mekanik Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/PjxQTtLbJC5fp3S67" },
+							"UA - KRYVI RIH - GRVGRAD - Grvgrad Asfalt Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/tJGPWK5MkMvsXazX7" },
+							"UA - LUHANSK - SHCHASTYA - Luhansk Asphalt Plent": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/cpdc9dYMzvgdpyuQ7" },
+							"UA - LUHANSK - SHCHASTYA - Luhansk Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/nadcRGpgGfM6ug3V7" },
+							"UA - LVIV - AVIITSA - Aviitsa Efe Beton": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/oevo6kzJwazz6ujX6" },
+							"UA - LVIV - LYPNYKY - Lypnyky Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/w6uXQ2MmQ48DVKRt7" },
+							"UA - LVIV - MYKOLAIV  - Mykolaiv Kum Ocaği": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/NZGiv3Cbtg5YNbRh7" },
+							"UA - LVIV - OJIDOV - Ojidov Mekanik Plent": { "address": "Ojidov, Lviv Oblast", "map": "https://maps.app.goo.gl/TdfsapHXqyhkgogi6" },
+							"UA - LVIV - OJIDOV - Ojidov Şantiye": { "address": "Ojidov, Lviv Oblast", "map": "https://maps.app.goo.gl/PmNk8JF8TbV28SrbA" },
+							"UA - LVIV - RYASNE - Ryasne Makina Parki": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/4eUoMBtUNKNqQNNz8" },
+							"UA - LVIV - RYASNE - Ryasne Merkez Kamp": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/NtQRPd6W94y49Bx36" },
+							"UA - LVIV - SAMBİR - Sambir Mekanik Plent": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/UBcsVvRK7YjhXEBi8" },
+							"UA - LVIV - SAMBİR - Sambir Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/RHTPEhqAciVJSTTP8" },
+							"UA - LVIV - SCHREYTS - Schreyts Efe Beton": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/bHYZdDw8TokCeXjSA" },
+							"UA - LVIV - ZHYDACHIV - Zhydachiv Plent Tesisleri": { "address": "Ukraine,Lvivregion,Zhydachiv,GnizdychivskaStreet, 8   -   81700", "map": "https://maps.app.goo.gl/TSG3nBT3UcfjaiZTA" },
+							"UA - LVIV - ZHYDACHIV - Zhydachiv Wood Industries": { "address": "Ukraine,Lvivregion,Zhydachiv,GnizdychivskaStreet, 8   -   81700", "map": "https://maps.app.goo.gl/f1FfbnCGd4osRn2X8" },
+							"UA - MARIUPOL -  - Mariupol Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/eStCDX4yyMAmjqZi8" },
+							"UA - POLTOVA - BUTENKİ - Butenki Plent Sahası": { "address": "39213, Butenky village, Industrialna st. 8b, Poltava region, Kobelyatskyi district", "map": "https://maps.app.goo.gl/cXzCF6CiuYpw5BvW8" },
+							"UA - POLTOVA - CHUTOVA - Chutova Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/FuNkSjReHyQGVQgH7" },
+							"UA - POLTOVA - KAPUSTYANI - Kapustyani Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/s5fzVhKXiR8UAkuv8" },
+							"UA - POLTOVA - KHOROL - Khorol Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/36VUgnq43e355UJZ8" },
+							"UA - POLTOVA - KRASNE - Krasne Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/vbvtAaLtYGz4byJj8" },
+							"UA - POLTOVA - SUPRINIVKA  - Suprinivka Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/jAuDw4tHqVRPPbKJ7" },
+							"UA - POLTOVA - SUPRINIVKA  - Suprinivka Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/5r4AW9NzCEngnzk86" },
+							"UA - RIVNE - ROKITNE - Rokitne Taş Ocaği": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/WUpwAhgDGQ7tmu9s5" },
+							"UA - TERNOPIL - KOZOVA - Kozova Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/XvZWAuei5cCrB7XS8" },
+							"UA - VOLIN - IVANYCHI - Ivanychi Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/SH1NLzgFBvLM641L6" },
+							"UA - ZAKARPATYA - DUBRYNYCHI - Dubrynychi Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/A7R2ts9ydvGM3etH7" },
+							"UA - ZAKARPATYA - VOLOVETS - Volovets Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/ZQYrSptktUEgxFxD6" },
+							"UA - ZAPOROJE -  - Zaporoje Köprü Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/HP4Y6kNXprrZ8RKu8" },
+							"UA - ZAPOROJE -  - Zaporoje Yol Şantiye": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/mGab1QNgawsim38SA" },
+							"UA - ZAPOROJE - NOVOMYKOLAIVSKYI - T04-08 Mekanik Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/CxJMJUuEcK4H8A526" },
+							"UA - ZHYTOMİR -  - Zhytomir Plent Sahası": { "address": "Eksik Bilgi", "map": "https://maps.app.goo.gl/yZcrUZo5YB87XaG49" }
+
                 }
             }
         };
@@ -580,8 +644,8 @@
             <br />
             <b>${name}</b> <span style="color: #F77A1E;"> | </span> 
             ${title}  <span style="color: #F77A1E;"> | </span> 
-			<b>${currentLanguage === 'tr' ? 'Telefon' : 'Phone'}:</b> ${formattedPhone}<br />
-            <b>${currentLanguage === 'tr' ? 'Adres' : 'Address'}:</b> ${address}
+<b>${currentLanguage === 'tr' ? 'Telefon' : currentLanguage === 'uk' ? 'Телефон' : 'Phone'}:</b> ${formattedPhone}<br />
+<b>${currentLanguage === 'tr' ? 'Adres' : currentLanguage === 'uk' ? 'Адреса' : 'Address'}:</b> ${address}
             <br />        
             <a class="social" href="https://www.onurgroup.com/" rel="noopener">Website</a> <span class="ayrac">|</span> 
             <a class="social" href="https://facebook.com/onurgroup06" rel="noopener">Facebook</a> <span class="ayrac">|</span> 
