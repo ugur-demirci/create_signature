@@ -40,8 +40,7 @@
 		<label for="title" id="labelTitle">Unvan:</label>
 <select id="title" name="title" aria-label="Unvan" required>
     <option value="" disabled selected id="selectTitleOption">Unvan Seçin</option>
-    
-	
+		
 <option value="agronomist" data-tr="Agronom" data-en="Agronomist" data-uk="Агроном">Agronom</option>
 <option value="warehouse_worker" data-tr="Ambar İşçisi" data-en="Warehouse Worker" data-uk="Працівник складу">Ambar İşçisi</option>
 <option value="warehouse_supervisor" data-tr="Ambar Sorumlusu" data-en="Warehouse Supervisor" data-uk="Керівник складу">Ambar Sorumlusu</option>
@@ -334,6 +333,7 @@
 
         function setLanguage(lang) {
             currentLanguage = lang;
+			sortTitlesByLanguage(lang);
 		const translations = {
 			tr: {
 				formTitle: "Mail İmza Oluşturucu",
@@ -348,7 +348,8 @@
 				selectBranch: "Önce bir ülke seçin",
 				countryCode: "Ülke Kodu",
 				tooltipText: "Şube konumu olarak seçmiş olduğunuz adres, oluşturulacak olan imza içerisinde yer alan 'Map' linki olarak eklenecektir.",
-				selectTitle: "Unvan Seçin"
+				selectTitle: "Unvan Seçin",
+				createButton: "Oluştur"				
 			},
 			en: {
 				formTitle: "Email Signature Generator",
@@ -363,7 +364,8 @@
 				selectBranch: "Select a country first",
 				countryCode: "Country Code",
 				tooltipText: "The address you have selected as the branch location will be added as the 'Map' link in the signature to be created.",
-				selectTitle: "Select Title"
+				selectTitle: "Select Title",
+				createButton: "Generate"
 			},
 			uk: {
 				formTitle: "Генератор Підпису для Електронної Пошти",
@@ -378,26 +380,27 @@
 				selectBranch: "Спочатку виберіть країну",
 				countryCode: "Код Країни",
 				tooltipText: "Адреса, яку ви вибрали як місцезнаходження філії, буде додана як посилання «Мапа» у підпис, який буде створено.",
-				selectTitle: "Виберіть Посаду"
+				selectTitle: "Виберіть Посаду",
+				createButton: "Створити"
 			}
 		};
-
 			const labels = translations[lang];
-			document.getElementById('formTitle').textContent = labels.formTitle;
-			document.getElementById('labelName').textContent = labels.labelName;
-			document.getElementById('labelTitle').textContent = labels.labelTitle;
-			document.getElementById('labelTel').textContent = labels.labelTel;
-			document.getElementById('labelAdres').textContent = labels.labelAdres;
-			document.getElementById("selectCountryOption").innerText = translations[lang].selectCountry;
-			document.getElementById('adresDetails').innerText = translations[lang].placeholderAddress;
-			document.getElementById('labelSube').textContent = labels.labelSube;
-			document.getElementById("selectBranchOption").innerText = translations[lang].selectBranch;
-			document.getElementById('subeDetails').innerText = translations[lang].placeholderBranch;
-			document.getElementById("TextUlkeKodu").innerText = translations[lang].countryCode;
-			document.getElementById("tooltipText").textContent = labels.tooltipText;
-			document.getElementById("selectTitleOption").innerText = translations[lang].selectTitle;
-			
-			 // Unvan seçenekleri
+			if (document.getElementById('formTitle')) 			{document.getElementById('formTitle').textContent = labels.formTitle;}
+			if (document.getElementById('labelName')) 			{document.getElementById('labelName').textContent = labels.labelName;}
+			if (document.getElementById('labelTitle')) 			{document.getElementById('labelTitle').textContent = labels.labelTitle;}
+			if (document.getElementById("labelTel")) 			{document.getElementById('labelTel').textContent = labels.labelTel;}
+			if (document.getElementById('labelAdres')) 			{document.getElementById('labelAdres').textContent = labels.labelAdres;}
+			if (document.getElementById('selectCountryOption'))	{document.getElementById("selectCountryOption").innerText = translations[lang].selectCountry;}
+			if (document.getElementById('adresDetails')) 		{document.getElementById('adresDetails').innerText = translations[lang].placeholderAddress;}
+			if (document.getElementById('labelSube')) 			{document.getElementById('labelSube').textContent = labels.labelSube;}
+			if (document.getElementById('selectBranchOption')) 	{document.getElementById("selectBranchOption").innerText = translations[lang].selectBranch;}
+			if (document.getElementById('subeDetails')) 		{document.getElementById('subeDetails').innerText = translations[lang].placeholderBranch;}
+			if (document.getElementById('TextUlkeKodu')) 		{document.getElementById("TextUlkeKodu").innerText = translations[lang].countryCode;}
+			if (document.getElementById('tooltipText')) 		{document.getElementById("tooltipText").textContent = labels.tooltipText;}
+			//if (document.getElementById("selectTitleOption")) 	{document.getElementById("selectTitleOption").innerText = translations[lang].selectTitle;}
+			if (document.getElementById("selectTitleOption")) 	{document.getElementById("selectTitleOption").innerText = labels.selectTitle;}
+			if (document.querySelector("button[type='button']")){document.querySelector("button[type='button']").innerText = labels.createButton;}
+
 			const titleOptions = document.querySelectorAll("#title option[data-tr]");
 			titleOptions.forEach(option => {
 				const translatedText = option.getAttribute(`data-${lang}`);
@@ -487,7 +490,37 @@
 
         ]
 		}
+			
 	};
+	
+		function sortTitlesByLanguage(lang) {
+			const titleSelect = document.getElementById('title');
+			const optionsArray = Array.from(titleSelect.options).filter(option => option.value);
+
+		optionsArray.sort((a, b) => {
+        const textA = a.getAttribute(`data-${lang}`) || a.textContent;
+        const textB = b.getAttribute(`data-${lang}`) || b.textContent;
+        return textA.localeCompare(textB, lang);
+    });
+
+       titleSelect.innerHTML = '';
+
+		const defaultOption = document.createElement('option');
+		defaultOption.value = '';
+		defaultOption.disabled = true;
+		defaultOption.selected = true;
+		defaultOption.id = 'selectTitleOption';
+		defaultOption.innerText = translations[lang].selectTitle;
+		titleSelect.appendChild(defaultOption);
+
+    optionsArray.forEach(option => {
+        const translatedText = option.getAttribute(`data-${lang}`);
+        if (translatedText) {
+            option.textContent = translatedText;
+        }
+        titleSelect.appendChild(option);
+    });
+}
 		function updateInstructions() {
 		const instructionList = document.getElementById('instructionList');
 		instructionList.innerHTML = '';
